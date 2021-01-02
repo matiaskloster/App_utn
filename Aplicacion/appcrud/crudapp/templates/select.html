@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="card-body">
+    <h1>App Crud</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for datos in modelo %}
+            <tr>
+                <td>{{ datos.nombre }}</td>
+                <td>{{ datos.apellido }}</td>
+                <td>{{ datos.email }}</td>
+                <td>{{ datos.telefono }}</td>
+                <td>{{ datos.direccion }}</td>
+
+                <td><a type="button" class="btn btn-warning" href="/update/{{ datos.id }}">Update</a>
+                    <a type="button" class="btn btn-danger" href="/delete/{{ datos.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a type="button" class="btn btn-success" href="{%url 'create' %}">Create</a>
+</div {% endblock %}
