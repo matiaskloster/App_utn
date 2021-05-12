@@ -1,3 +1,7 @@
-# App_utn
+# Crud
 
-Crud app made it with Django ann Mysql 8
+- Django
+- Python
+- Html5
+- css3
+- Mysql
